@@ -203,12 +203,6 @@ main ()
     bundle_install
   fi
 
-  if [ -f Cartfile.resolved ]
-  then
-    install_carthage
-    bootstrap_carthage
-  fi
-
   if [ -f .swiftlint.yml ]
   then
     install_swiftlint
@@ -222,6 +216,12 @@ main ()
   if [ -f .tailor.yml ]
   then
     install_tailor
+  fi
+
+  if [ -f Cartfile ]
+  then
+    install_carthage
+    bootstrap_carthage
   fi
 
   if [ -f Podfile ]
